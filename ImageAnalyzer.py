@@ -135,7 +135,7 @@ class ImageAnalyzer:
         
         return substr_bar/len(Ki), plot1[1][0:-1], bar1/len(Ki), bar2/len(Ki)
         
-    def plotStat(self, result, label, target = 'eliminate', save = False, PATH = None) :
+    def plotStat(self, result, label, target = 'eliminate', save = True, PATH = None) :
         ''' TO DO: path writable '''
         if (target == 'eliminate') | (target == 'all'):
             plt.clf()
@@ -146,7 +146,7 @@ class ImageAnalyzer:
             plt.xlabel('Ki (1/min)')
             plt.ylabel('fraction of voxels')
             if save:
-                plt.savefig(PATH+'AIF_full_seq\\' +label+' after subtraction.png')
+                plt.savefig(os.path.join(self.path, str(label)+'_after_subtraction.png'))
             plt.show()
         elif (target == 'original')|(target == 'all'):
             plt.clf()
@@ -158,7 +158,7 @@ class ImageAnalyzer:
             plt.xlabel('Ki (1/min)')
             plt.ylabel('fraction of voxels')
             if save:
-                plt.savefig(PATH+'AIF_full_seq\\' +label+' before subtraction.png')
+                plt.savefig(os.path.join(self.path, str(label)+'_before_subtraction.png'))
             plt.show()
         
         self.result_mean[label] = {'Ki' : np.sum(result[label]['bins']*result[label]['remove'])}

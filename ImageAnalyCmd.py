@@ -199,7 +199,7 @@ class ImageAnalyzerShell(ImageAnalyzerShellBase):
             print('or: select 70 RF --manual-input 50 60 7')
         else:
             
-            if len(cmds) <= 2:
+            if len(cmds) <= 1:
                 print('too less argument, for more information, please type <select -help>')
                 
             else:
