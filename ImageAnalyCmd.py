@@ -123,6 +123,7 @@ class ImageAnalyzerShell(ImageAnalyzerShellBase):
     def do_pid(self, args):
         cmds = args.split()
         self.pid = cmds
+        print('the pid is seteed as : {}'.format(self.pid))
     def do_rename(self, args):
         # usage rename [folder]
         # TODO: rename rules
