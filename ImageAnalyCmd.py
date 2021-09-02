@@ -174,7 +174,7 @@ class ImageAnalyzerShell(ImageAnalyzerShellBase):
     def do_inputfile(self, args):
         cmds = args.split()
 
-        file = np.array(pd.read_csv(cmds[0]).values)
+        file = np.array(pd.read_csv(os.path.join(self.workDir,cmds[0])).values)
         
         for data in file:
             if data[1] != 'VIF':
