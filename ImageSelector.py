@@ -50,7 +50,7 @@ class window_motion:
             else:
                 for cir in self.region:
                     if ((self.xcoor-cir[0])**2+(self.ycoor-cir[1])**2) < cir[2]**2:
-                        self.ax.add_patch(Circle((cir[0], cir[1]), 1/2*cir[2], fill=True, color='grey') )
+                        self.ax.add_patch(Circle((cir[0], cir[1]), 1/2*cir[2], fill=True, color='grey', alpha = 0.2) )
                         self.region.remove(cir)
                         self.fig.canvas.draw()
 

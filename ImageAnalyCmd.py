@@ -165,7 +165,7 @@ class ImageAnalyzerShell(ImageAnalyzerShellBase):
         cmds = args.split()
         if '-f' in cmds:
             self.fatCut = []
-        if '-reg' in cmds:
+        if '-region' in cmds:
             if cmds[cmds.index('-reg')+1] == 'all':
                 self.region = {}
             else:
