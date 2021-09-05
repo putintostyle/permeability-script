@@ -35,7 +35,10 @@ class ImagePreprocessor:
         
         fat_array = [peaks1[0],peaks1[-1], peaks2[0],peaks2[-1],peaks3[0],peaks3[-1]] #store all the peaks
         fat_array = [i for i in fat_array if i!=0]
-        fat_array.remove(max(fat_array))
-        fat_array.remove(min(fat_array))
+        self.new_method(fat_array)
 
         return img/np.mean(fat_array)
+
+    def new_method(self, fat_array):
+        fat_array.remove(max(fat_array))
+        fat_array.remove(min(fat_array))
